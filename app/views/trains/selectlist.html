@@ -1,0 +1,31 @@
+<html>
+	<head>
+			<link rel="stylesheet" type="text/css" href="bootstrap/css/selectlist.css">
+		<script src="bootstrap/js/selectlist.js" type="text/javascript" ></script>
+		</head>
+	<body>
+	<center>
+		<table>
+			<tr>
+			<td colspan="2"><input type="text" value="" id="text" /></td>
+			<td><input type="button" value="Add" onclick="add(document.getElementById('s1'))" /></td>
+			</tr>
+			<tr><td>
+			<select id="s1" multiple="">						
+			</select>
+			</td><td>
+			<input type="button" value=">>" onclick="hello(document.getElementById('s1'),document.getElementById('s2'))" /><br><br>
+			<input type="button" value="<<" onclick="hello(document.getElementById('s2'),document.getElementById('s1'))" />
+			</td><td>
+			<select id="s2" multiple="">
+			</select>		
+			</td></tr>
+			<tr>
+				<td><input type="button" value="SelectAll" onclick="selectall(document.getElementById('s1'),document.getElementById('s2'))" /></td>
+				<td></td>
+				<td><input type="button" value="SelectAll" onclick="selectall(document.getElementById('s2'),document.getElementById('s1'))" /></td>
+			</tr>
+		</table>
+		</center>
+	</body>
+</html>

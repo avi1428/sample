@@ -1,0 +1,47 @@
+<table border="1">
+<tr><th colspan="6"><center><h2>List of Trains</h2></center></th></tr>  
+   <tr>
+    <th><%= link_to_remote 'Train_Number',:url => {:action =>"index_asc", :sort_asc=>@sort_order, 
+    :f_name => "train_num" } %>
+      </th>
+    <th><%#= link_to 'Train_Name',:action =>"index", :sort_asc=>@sort_order, 
+    :f_name => "train_name" %>
+    <%= link_to_remote 'Train_Name',:url => {:action =>"index_asc", :sort_asc=>@sort_order, 
+    :f_name => "train_num" } %>
+    </th>
+    <th><%#= link_to 'From_Station',:action =>"index", :sort_asc=>@sort_order, 
+    :f_name => "train_from" %>
+    <%= link_to_remote 'From_Station',:url => {:action =>"index_asc", :sort_asc=>@sort_order, 
+    :f_name => "train_num" } %>
+    </th>
+    <th><%#= link_to 'To_Station',:action =>"index", :sort_asc=>@sort_order, 
+    :f_name => "train_to" %>
+    <%= link_to_remote 'To_Station',:url => {:action =>"index_asc", :sort_asc=>@sort_order, 
+    :f_name => "train_num" } %>
+    </th>
+    <th><%#= link_to 'Distance',:action =>"index", :sort_asc=>@sort_order, 
+    :f_name => "train_dist" %>
+    <%= link_to_remote 'Distance',:url => {:action =>"index_asc", :sort_asc=>@sort_order, 
+    :f_name => "train_num" } %>
+      </th>
+    <th>Operations</th>
+  </tr>
+
+<% for train in @trains %>
+  <tr>
+    <td><%=h train.train_num %></td>
+    <td><%=h train.train_name %></td>
+    <td><%=h train.train_from %></td>
+    <td><%=h train.train_to %></td>
+    <td><%=h train.train_dist %></td>   
+    <td><%= link_to 'Edit', edit_train_path(train) %> &nbsp;&nbsp; 
+     <%#= link_to_remote 'Delete', {:controller=>"trains", :action=>"destroy_train" , :id =>train.id} %>
+
+     <%= link_to_remote 'delete',
+    :url => { :action => "destroy_train", :id =>train.id }%>
+
+   </td>
+   <!-- <td><%#= link_to 'Delete', train_path(train), :method=>"delete"%></td> -->
+  </tr>
+<% end %>
+</table>

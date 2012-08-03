@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    
+  });
+  
+  </script>
+</head>
+<body>
+<div style="margin-top:130px"> 
+<%#= text_field(:trains, :train_num) %>
+<table style="margin-left:400px; margin-top:50px;color:#fff; border:2px solid blue">
+  <tr><th colspan="2"><span style="text-align:center; color:yellow;">
+<%= "Welcome to " + session[:user_name] if session[:user_name] %></span></th></tr>
+  <%# for data in @account %>
+  <tr>
+    <td style="color:cyan;font-weight:bold;">User Name</td><td> :&nbsp;<%=h @account.user_name %></td> </tr>
+    <tr><td style="color:cyan;font-weight:bold;">Email Id</td><td> :&nbsp;<%=h @account.user_email %></td></tr>
+    <tr><td style="color:cyan;font-weight:bold;">Password</td><td> :&nbsp;<%=h @account.user_password %></td></tr>
+    <tr><td style="color:cyan;font-weight:bold;">Mobile</td><td> :&nbsp;<%=h @account.mobile %></td> 
+      <tr><td style="color:cyan;font-weight:bold;">Photo</td><td> :&nbsp;<%=h image_tag @account.avatar.url(:thumb) %></td> 
+       
+    <%#= link_to 'Edit', edit_train_path(train) %>
+     <%#= link_to 'Delete',:action=>"destroy_train" , :id =>train.id %>
+   <!-- <td><%#= link_to 'Delete', train_path(train), :method=>"delete"%></td> -->
+  </tr>
+   <tr><th colspan="2"><span style="text-align:center;">
+<%= button_to 'Back',"/trains/index" %></span></th></tr>
+  
+<%# end %>
+</table>
+</div>
+
+</body>
+</html>    

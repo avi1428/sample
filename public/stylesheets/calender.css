@@ -1,0 +1,25 @@
+table
+{
+	border:2px solid gray;
+	margin-left:250px;
+	margin-top: 20px;
+	border-radius:15px;
+	background:gray;
+}
+td
+{
+	text-align:center;
+	color: white;	
+}
+#daynames
+{
+	color:red;
+}
+#today
+{
+	color: white;
+	font-style: italic;
+}
+#text {
+	color:black;
+}

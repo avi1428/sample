@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    
+  });
+  
+  </script>
+</head>
+<body>
+<div style="margin-top:130px"> 
+<% form_for @train, :url=>{:action=>"create"} do |f| %>
+<%#= error_messages_for :train %>
+
+<table style="margin-left:400px;margin-top:50px; border:2px solid blue">
+<tr><th colspan="2"><center>Add Train Informtaion</center></th></tr>
+<tr><td>	Train Name</td><td>:<%= f.text_field :train_name%></td></tr> 
+<tr><td>Train Number</td><td>:<%= f.text_field :train_num%></td></tr> 	
+	<tr><td>From_Station</td><td>:<%= f.text_field :train_from %></td></tr>
+	 <tr><td>To_Station</td><td>:<%= f.text_field :train_to %></td></tr>
+	<tr><td>Distance</td><td>:<%= f.text_field :train_dist %></td></tr>
+	<tr><td colspan="2"><center><%= f.submit "Add"%></td></center></tr>
+</table>
+
+<%end%>
+
+</div>
+<%= render :partial => "footer" %>
+</body>
+</html>

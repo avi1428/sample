@@ -1,0 +1,24 @@
+<html>
+<head>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    
+  });
+  
+  </script>
+</head>
+<body>
+	<%= link_to "Check JS" ,:html_options=>{:confirm=>"Are you OK?"} %>
+<div id="train_list" style="margin-top:130px">  
+  <%= render :partial =>"train_list"%>
+</div>
+
+</body>
+</html>    
+
+<%#= select_date %>
+<%#= select_time %>
+<!-- <p> "photos_url" and "photos_path" map to the path for the index and create actions
+"new_photo_url" and "new_photo_path" map to the path for the new action
+"edit_photo_url" and "edit_photo_path" map to the path for the edit action
+"photo_url" and "photo_path" map to the path for the show, update, and destroy actions </p> -->

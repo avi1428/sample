@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    
+  });
+  
+  </script>
+</head>
+<body>
+<div style="margin-top:130px"> 
+<% form_for :account, @account, :url=>{:action=>"create_signup"} ,:html => { :multipart => true } do |f| %>
+<table style="margin-left:400px;margin-top:50px; border:2px solid blue">
+<tr><th colspan="2"><center>Add User Informtaion</center></th></tr>
+<tr><td>Name</td><td>:<%= f.text_field :user_name%></td></tr> 
+<tr><td>Email</td><td>:<%= f.text_field :user_email%></td></tr> 	
+	<tr><td>Password</td><td>:<%= f.password_field :user_password %></td></tr>
+	 <tr><td>Mobile</td><td>:<%= f.text_field :mobile %></td></tr>	
+	 <tr><td>Photo</td><td>:<%= f.file_field :avatar %></td></tr>	
+	<tr><td colspan="2"><center><%= f.submit "Signup"%><center></td></tr>
+</table>
+
+<%end%>
+
+</div>
+<%= render :partial => "footer" %>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    
+  });
+  
+  </script>
+</head>
+<body>
+<div style="margin-top:130px">
+<center>
+</center>
+<table border="1">
+  <tr><th colspan="5"><center><h2>Search Trains with <span style="color:red;"><%= params[:search_name]%></span></h2></center></th></tr> 
+  <tr>
+   <th>Train_Number</th>
+    <th>Train_Name</th>
+    <th>From_Station</th>
+    <th>To_Station</th>
+    <th>Distance</th>
+   
+  </tr>
+
+<% if @trains.size > 0 %>
+  <% for train in @trains %>
+    <tr>
+      <td><%=h train.train_num %></td>
+      <td><%=h train.train_name %></td>
+      <td><%=h train.train_from %></td>
+      <td><%=h train.train_to %></td>
+      <td><%=h train.train_dist %></td>       
+    </tr>
+  <% end %>
+<%else%> 
+ <tr>    
+    <td colspan="5"> <p style="color:green"> There are no search results for the given 
+     <span style="color:red"> <%= params[:search_name]%></span> </p>
+    </td>       
+ </tr> 
+<%end %>
+</table>
+ <span style="margin-left:150px"><%= button_to 'Back',"/trains/index" %></span>
+</div>
+<%= render :partial => "footer" %>
+</div>
+</body>
+</html>
